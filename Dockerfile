@@ -12,7 +12,7 @@ ARG USER_GID=$USER_UID
 RUN mkdir -p /var/log/supervisor; \
     mkdir -p /var/www/html; \
     addgroup -g $USER_GID $USERNAME; \
-    adduser -u $USER_UID -G $USERNAME --shell /bin/bash -h /home/$USERNAME; \
+    adduser -u $USER_UID -G $USERNAME -s /bin/bash -h /home/$USERNAME; \
     chown $USERNAME /var/www/html;
 
 COPY supervisord.conf entrypoint.sh ./
