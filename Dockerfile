@@ -1,12 +1,9 @@
-FROM ubuntu
+FROM alpine:3.17
 
 WORKDIR /usr/src
 
-RUN set -eux; apt-get update; \
-    apt-get install -y --no-install-recommends ffmpeg nginx supervisor; \
-    #
-    # clean up
-    rm -rf /var/lib/apt/lists/*;
+RUN set -eux; \
+    apk add --no-cache bash ffmpeg nginx supervisor
 
 ARG USERNAME=user
 ARG USER_UID=1000
