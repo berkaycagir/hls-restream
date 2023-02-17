@@ -21,5 +21,6 @@ COPY player.html /var/www/html/index.html
 COPY nginx.conf /etc/nginx/sites-enabled/default
 
 ENV USER=$USERNAME
+USER $USERNAME
 
 CMD ["./entrypoint.sh"]

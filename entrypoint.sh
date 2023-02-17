@@ -9,7 +9,7 @@ function generate_entry {
     echo 'startretries=5'
     echo 'numprocs=1'
     echo 'startsecs=0'
-    echo 'user=%(ENV_USER)s'
+    echo 'user=%(USER)s'
     echo 'process_name=%(program_name)s_%(process_num)02d'
     echo 'stderr_logfile=/var/log/supervisor/%(program_name)s_stderr.log'
     echo 'stderr_logfile_maxbytes=10MB'
